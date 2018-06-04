@@ -13,12 +13,11 @@ const int iSize = 19;
 void full(int i, int j, bool a, int max) { //funzione che riempie la matrice a discrepanza di parametri passati dal main 
 	srand((unsigned)time(NULL));
 	do{
-		do {
-			if (a == true) //in caso che il main lo richieda il programma riempierà con numeri randomici (0,1) le celle della matrice per la generazione dell'ambiente di gioco
-				iMatrix[j][i] = rand() % 2;
+		do{
+			if (a) //in caso che il main lo richieda il programma riempierà con numeri randomici (0,1) le celle della matrice per la generazione dell'ambiente di gioco
+				iMatrix[j++][i] = rand() % 2;
 			else// prima di riempire in maniera randomica il programma riempie la matrice con tutti zeri in modo da riuscire a gestire i bordi  
-				iMatrix[j][i] = 0;
-			j++;
+				iMatrix[j++][i] = 0;
 		} while (j < max);
 		i++;
 	} while (i < max);
